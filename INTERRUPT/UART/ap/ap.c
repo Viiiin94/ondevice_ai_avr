@@ -28,10 +28,17 @@ void apMain()
             PORTD = 0xff;
             _delay_ms(300);
         }
-        else
+        else if (data >= '0' && data <= '9')
         {
             _delay_ms(50);
             FND_Display(data);
+        }
+        else
+        {
+            _delay_ms(50);
+            PORTD = 0x00;
+            FND_DATA_PORTA = 0x00;
+            FND_DATA_PORTB = 0x00;
         }
     }
 }
