@@ -15,10 +15,7 @@ void FND_Display(uint8_t data)
         0x6f,
     };
 
-    if (data >= '0' || data <= '9')
-    {
-        uint8_t index = data - '0';
-        FND_DATA_PORTA = fndData[index];
-        FND_DATA_PORTB = fndData[index];
-    }
+    uint8_t index = data - '0';
+    FND_DATA_PORTA = fndData[index];
+    FND_DATA_PORTB = fndData[index];
 }
